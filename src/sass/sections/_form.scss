@@ -1,0 +1,83 @@
+#form-section {
+    background-color: $white-color;
+    padding: 15rem 0 13rem 0;
+    margin-top: -14rem;
+    margin-bottom: -1px;
+    padding-bottom: 20rem;
+    color: $dark-blue-text;
+    -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  
+    @include respond(tab-land) {
+      padding: 10rem 0;
+      margin-top: 0;
+      clip-path: none;
+      -webkit-clip-path: none;
+    }
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      color: $dark-blue-text;
+      margin-bottom: 3rem;
+      font-weight: 700;
+    }
+  
+    .form-group {
+      margin-bottom: 1.5rem;
+  
+      label {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: $primary-color;
+      }
+  
+      .form-control {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.6rem;
+        border: 1px solid lighten($primary-color, 20%);
+        border-radius: 0.5rem;
+        transition: border-color 0.3s ease;
+  
+        &:focus {
+          border-color: darken($primary-color, 10%);
+          outline: none;
+        }
+      }
+  
+      select.form-control {
+        appearance: none;
+        // background: $white-color url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="%23${encodeURIComponent(darken($primary-color, 20%))}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><path d="M6 9l6-6M6 15l6-6"/></svg>') no-repeat right 1rem center;
+        background-size: 1rem;
+        padding-right: 2.5rem;
+        background-color: white;
+      }
+    }
+  
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.6rem;
+      background-color: $primary-color;
+      color: $white-color;
+      border: none;
+      border-radius: 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover,
+      &:focus {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+  
