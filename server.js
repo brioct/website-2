@@ -29,7 +29,7 @@ app.post('/send', (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'testforbri@outlook.com', // Change to your receiving email address
+    to: 'octavianohealth@outlook.com', // Change to your receiving email address
     subject: 'Insurance Application Form Submission',
     text: `
       First Name: ${firstName}
