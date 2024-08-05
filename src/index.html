@@ -348,28 +348,28 @@
     <script>
       document.getElementById('insurance-form').addEventListener('submit', function(event) {
         event.preventDefault();
-      
+    
         const formData = new FormData(this);
         const data = {};
         formData.forEach((value, key) => {
           data[key] = value;
         });
-      
-        fetch('http://localhost:5000/send', {
+    
+        fetch('/.netlify/functions/send', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data),
         })
-          .then(response => response.text())
-          .then(data => {
-            alert('Form submitted successfully');
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            alert('Error submitting form');
-          });
+        .then(response => response.text())
+        .then(data => {
+          alert('Form submitted successfully');
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Error submitting form');
+        });
       });
     </script>
 
