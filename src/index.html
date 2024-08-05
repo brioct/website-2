@@ -355,24 +355,28 @@
           data[key] = value;
         });
     
-        fetch('/.netlify/functions/send', {
+        fetch('https://octavianohealthagency.com/.netlify/functions/send-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data),
         })
-        .then(response => response.text())
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+          }
+          return response.text();
+        })
         .then(data => {
           alert('Form submitted successfully');
         })
         .catch(error => {
           console.error('Error:', error);
-          alert('Error submitting form');
+          alert('Error submitting form: ' + error.message);
         });
       });
     </script>
-
 
     <!-- **** Contact Section **** -->
     <section id="contact">
